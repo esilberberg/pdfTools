@@ -20,6 +20,7 @@ for root, dirs, files in os.walk(path, topdown=False):
             out_error = proc.stderr.readlines()
             font_count = len(out)
 
+# Subtract 2 because pdffonts includes two initial lines as a heading
         if font_count - 2 == 0:
             print(filepath)
             suspects.append(filepath)
